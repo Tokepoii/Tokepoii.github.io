@@ -110,9 +110,50 @@ h1.a {
   font: Courier New 30px Georgia, serif;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #333;
+}
+
+a.bar { 
+	color: white;
+	}
+
 </style>
 </head>
-<body>
+<body background="file:///C:/Users/Touko/Downloads/the-1865639.jpg" width="500">
+<font color="white">
+<ul>
+  <li><a class="bar" href="#home">Home</a></li>
+  <li><a class="bar" href="#news">News</a></li>
+  <li><a class="bar" href="#contact">Contact</a></li>
+  <li style="float:right"><a class="bar" href="#about">About</a></li>
+</ul>
+</font>
 
 
 
@@ -125,7 +166,7 @@ h1.a {
 <a class="link" href="http://toukovalkonen.tk">
 <h1>ToukoValkonen.tk</h1></a>
 <a href="javascript:void(0);"
- NAME="My Window Name"  title=" My title here "
+ NAME="My Window Name"  title="Instagram"
  onClick=window.open("https://instagram.com/toukovalkonen","Ratting","width=800,height=800,0,status=0,");>
 <img src="https://Tokepoii.github.io/Pics/iglogo.png" alt="Follow my instagram" width="50"></img>
 </a><hr noshade>
@@ -138,21 +179,13 @@ h1.a {
 <h2>PORTFOLIO</h2>
 
 <div id="myBtnContainer">
- <a href="http://toukovalkonen.tk">
-  <button class="btn active"> Show all</button>
- </a>
- <a href="http://toukovalkonen.tk/nature">
-  <button class="btn"> Nature</button>
- </a>
-</div>
-
 <!-- Portfolio Gallery Grid -->
 <div class="row">
   <div class="column nature">
     <div class="content">
       <img src="https://tokepoii.github.io/Pics/instagram1.jpg" alt="" style="width:100%">
       <h4>Autumn.</h4>
-      <p>Shot with iPhone 7.</p>
+      <Shot with iPhone 7.</p>
     </div>
   </div>
   <div class="column nature">
@@ -260,6 +293,40 @@ document.oncontextmenu=new Function("alert(message);return false")
 
 // --> 
 </script>
+
+<script>
+
+  document.onkeydown = function(e) {
+    if(e.keyCode == 123) {
+     return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+     return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+     return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+     return false;
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+     return false;
+    }      
+ }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 Copyright ©
 <?php $the_year = date("29.4"); echo $the_year; 2019 >
