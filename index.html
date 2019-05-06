@@ -1,6 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+background color: white;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+<!-- Website -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
 <title>Touko Valkonen | Photographer</title>
 <link rel="icon" href="Tokepoii.github.io/Pics/favicon.jpg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,7 +173,7 @@ h1 {
   color: white;
 }
 h1 {
-  font-size: 35px;
+  font-size: 70px;
   text-shadow: 2px 1px #8e0036;
 }
 h1.a {
@@ -166,19 +236,14 @@ body {
 
 
 <center>
-<a class="link" href="http://toukovalkonen.tk">
-<h1>ToukoValkonen.tk</h1></a>
-
-
-
+<h1>Portfolio</h1>
 <br>
-
 </center>
-
-<h2>PORTFOLIO</h2>
 
 <div id="myBtnContainer">
 <!-- Portfolio Gallery Grid -->
+<br>
+<br>
 <div class="row">
   <div class="column nature">
     <div class="content">
@@ -187,6 +252,7 @@ body {
       <Shot with iPhone 7.</p>
     </div>
   </div>
+  <br>
   <div class="column nature">
     <div class="content">
     <img src="https://tokepoii.github.io/Pics/instagram.jpg" alt="Nature" style="width:100%">
@@ -194,6 +260,7 @@ body {
       <p>Shot with DJI drone.</p>
     </div>
   </div>
+  <br>
   <div class="column nature">
     <div class="content">
     <img src="https://Tokepoii.github.io/Pics/instagram2.jpg" alt="Nature" style="width:100%">
@@ -294,6 +361,26 @@ document.oncontextmenu=new Function("alert(message);return false")
 // --> 
 </script>
 
+<script type="text/javascript">
+var omitformtags=["input", "textarea", "select"]
+omitformtags=omitformtags.join("|")
+function disableselect(e){
+if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+return false
+}
+function reEnable(){
+return true
+}
+if (typeof document.onselectstart!="undefined")
+document.onselectstart=new Function ("return false")
+else{
+document.onmousedown=disableselect
+document.onmouseup=reEnable
+}
+
+</script>
+
+
 <script>
 
   document.onkeydown = function(e) {
@@ -332,3 +419,23 @@ Copyright ©
 <?php $the_year = date("29.4"); echo $the_year; 2019 >
 <?php bloginfo('http://toukovalkonen.tk'); ? >
 All Rights Reserved.
+
+
+<!-- End of website -->
+</div>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</body>
+</html>
